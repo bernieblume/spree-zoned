@@ -9,8 +9,11 @@ module Spree
     module Search
       class Base
         attr_accessor :properties
+        attr_accessor :current_user
+        attr_accessor :current_currency
 
         def initialize(params)
+          self.current_currency = Spree::Config[:currency]
           @properties = {}
           prepare(params)
         end
