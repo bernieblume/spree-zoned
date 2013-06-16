@@ -4,7 +4,8 @@
 </div>
 
 <div class="add-to-cart">
-  <% if @product.has_stock? || Spree::Config[:allow_backorders] %>      
+  <% #if @product.has_stock? || Spree::Config[:allow_backorders] %>      
+  <% if Spree::Config[:allow_backorders] %>      
     <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
       1, :class => 'title', :in => 1..@product.on_hand %>
     <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
