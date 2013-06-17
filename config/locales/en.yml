@@ -6,6 +6,7 @@ en:
   deletefc: "Delete from country"
   backtocountry: "Reassign to country"
   country_price: "Country-specific price"
+  country: "country"
   language: "Language"
   iaccept: "I accept the "
   plsaccept: "Please accept our Terms of Service"
