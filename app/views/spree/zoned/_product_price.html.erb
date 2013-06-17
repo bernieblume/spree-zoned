@@ -2,12 +2,14 @@
   <h6 class="product-section-title"><%= t(:price) %></h6>
   <div><span class="price selling" itemprop="price"><%= number_to_currency getCountryPrice @product %></span></div>
 </div>
-
+<% #TODO implement on_hand and has_stock method %>
 <div class="add-to-cart">
-  <% #if @product.has_stock? || Spree::Config[:allow_backorders] %>      
-  <% if Spree::Config[:allow_backorders] %>      
-    <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+  <% #if @product.has_stock? || Spree::Config[:allow_backorders] %>
+  <% if Spree::Config.prefers_allow_backorder_shipping? %>
+    <%#= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
       1, :class => 'title', :in => 1..@product.on_hand %>
+    <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+      1, :class => 'title' %>
     <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
       <%= t(:add_to_cart) %>
     <% end %>
