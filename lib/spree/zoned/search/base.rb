@@ -39,7 +39,7 @@ module Spree
 
             #TODO will add active scope to Spree::Product
             base_scope = Spree::Product
-            if country_id.present? and country_id != 0
+            if country_id.present? and country_id.to_i != 0
               base_scope = base_scope.joins(:zoned_products).
                                     where("spree_zoned_products.spree_country_id" => country_id).
                                     order('spree_zoned_products.orderno')
