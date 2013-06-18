@@ -3,8 +3,6 @@
 ---
 en:
   nocountrysel: "No country selected"
-  deletefc: "Delete from country"
-  backtocountry: "Reassign to country"
   country_price: "Country-specific price"
   country: "country"
   language: "Language"
@@ -14,6 +12,9 @@ en:
   acceptfield: "Accept_Terms_of_Service"
   add_to_cart: "Add to cart"
   out_of_stock: "Out of stock"
+  spree:
+    deletefc: "Delete from country"
+    backtocountry: "Reassign to country"
   termstext: |
     These are the English Terms of Service__\
     Lorem\nipsum dolor sit amet,_\

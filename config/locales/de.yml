@@ -3,8 +3,6 @@
 ---
 de:
   nocountrysel: "Kein Land ausgewählt"
-  deletefc: "Aus Land löschen"
-  backtocountry: "Wieder ins Land"
   master_price: "Master - Preis"
   country_price: "Länderpreis"
   country: "Land"
@@ -15,6 +13,9 @@ de:
   acceptfield: "Ich_akzeptiere_die_AGB"
   add_to_cart: "In den Warenkorb"
   out_of_stock: "niet op voorraad"
+  spree:
+    deletefc: "Aus Land löschen"
+    backtocountry: "Wieder ins Land"
   termstext: |
     Das hier sind die deutschen AGB__\
     Lorem\nipsum dolor sit amet,_\

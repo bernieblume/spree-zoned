@@ -35,26 +35,33 @@ module Spree
 
         protected
           def get_base_scope
-            base_scope = Spree::Product.active
-            #
+            country_id = @properties[:zoned_country]
+
+            #TODO will add active scope to Spree::Product
+            base_scope = Spree::Product
+            if country_id.present? and country_id != 0
+              base_scope = base_scope.joins(:zoned_products).
+                                    where("spree_zoned_products.spree_country_id" => country_id).
+                                    order('spree_zoned_products.orderno')
+            end
             # Add scope for filtering products accoding to country setting of the spree_zoned extension
             # { CHANGE
-            country = @properties[:zoned_country]
-            base_scope = base_scope.joins(
-              'LEFT OUTER JOIN spree_zoned_products ON spree_zoned_products.spree_product_id = spree_products.id' +
-              " AND spree_zoned_products.spree_country_id = #{country}").where(
-              '(spree_zoned_products.orderno IS NULL OR spree_zoned_products.orderno >= 0)') if country
+            #TODO add orderno condition
+            #base_scope = base_scope.joins(
+            #  'LEFT OUTER JOIN spree_zoned_products ON spree_zoned_products.spree_product_id = spree_products.id' +
+            #  " AND spree_zoned_products.spree_country_id = #{country_id}").where(
+            #  '(spree_zoned_products.orderno IS NULL OR spree_zoned_products.orderno >= 0)') if country_id
             # CHANGE }
             base_scope = base_scope.in_taxon(taxon) unless taxon.blank?
             base_scope = get_products_conditions_for(base_scope, keywords) unless keywords.blank?
             #base_scope = base_scope.on_hand unless Spree::Config[:show_zero_stock_products]
             #base_scope = base_scope.on_hand unless Spree::Config.has_preference?(:preferred_show_zero_stock_products)
             base_scope = add_search_scopes(base_scope)
-            base_scope = base_scope.order('spree_zoned_products.orderno') if country
             base_scope
           end
 
           def add_search_scopes(base_scope)
+
             search.each do |name, scope_attribute|
               next if name.to_s =~ /eval|send|system/
 
