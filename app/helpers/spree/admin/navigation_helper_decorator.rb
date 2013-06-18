@@ -8,21 +8,21 @@ module Spree
         return if !country || country == 0
         if country && !resource.incountry?(country.to_i)
           options.reverse_merge! :url => object_url(resource) + '/zonedbtc' unless options.key? :url
-          options.reverse_merge! :caption => spree.t(:are_you_sure)
-          options.reverse_merge! :title => spree.t(:backtocountry)
+          options.reverse_merge! :caption => Spree.t(:are_you_sure)
+          options.reverse_merge! :title => Spree.t(:backtocountry)
           options.reverse_merge! :dataType => 'script'
           options.reverse_merge! :success => "function(r){ location.reload(); }"
           options.reverse_merge! :error => "function(jqXHR, textStatus, errorThrown){ show_flash_error(jqXHR.responseText); }"
-          options.reverse_merge! :name => icon('add') + ' ' + spree.t(:backtocountry)
+          options.reverse_merge! :name => icon('add') + ' ' + Spree.t(:backtocountry)
           link_to_function_btc(options, html_options)
         else
           options.reverse_merge! :url => object_url(resource) + '/zoneddfc' unless options.key? :url
-          options.reverse_merge! :caption => spree.t(:are_you_sure)
-          options.reverse_merge! :title => spree.t(:confirm_delete)
+          options.reverse_merge! :caption => Spree.t(:are_you_sure)
+          options.reverse_merge! :title => Spree.t(:confirm_delete)
           options.reverse_merge! :dataType => 'script'
           options.reverse_merge! :success => "function(r){ $('##{spree_dom_id resource}').prop('disabled', 'disabled'); location.reload(); }"
           options.reverse_merge! :error => "function(jqXHR, textStatus, errorThrown){ show_flash_error(jqXHR.responseText); }"
-          options.reverse_merge! :name => icon('delete') + ' ' + spree.t(:deletefc)
+          options.reverse_merge! :name => icon('delete') + ' ' + Spree.t(:deletefc)
           link_to_function_deletefc(options, html_options)
         end
 
@@ -32,7 +32,7 @@ module Spree
       # this function does not use jConfirm
       def link_to_function_deletefc_native(options, html_options)
         fn = %Q{
-          var answer = confirm("#{spree.t(:are_you_sure)}");
+          var answer = confirm("#{Spree.t(:are_you_sure)}");
           if (!!answer) { #{link_to_function_deletefc_ajax(options)} };
         }
         link_to_function options[:name], fn, html_options
