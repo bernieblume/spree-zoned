@@ -13,6 +13,7 @@ en:
   terms: "Terms of Service"
   acceptfield: "Accept_Terms_of_Service"
   add_to_cart: "In den Warenkorb"
+  out_of_stock: "Out of stock"
   termstext: |
     These are the English Terms of Service__\
     Lorem\nipsum dolor sit amet,_\

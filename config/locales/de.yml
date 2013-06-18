@@ -9,11 +9,12 @@ de:
   country_price: "Länderpreis"
   country: "Land"
   language: "Sprache"
-  iaccept: "Ich akzeptiere die "
+  iaccept: "Ich akzeptiere die"
   plsaccept: "Bitte akzeptieren Sie die "
   terms: "AGB"
   acceptfield: "Ich_akzeptiere_die_AGB"
   add_to_cart: "In den Warenkorb"
+  out_of_stock: "niet op voorraad"
   termstext: |
     Das hier sind die deutschen AGB__\
     Lorem\nipsum dolor sit amet,_\
