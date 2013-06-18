@@ -39,12 +39,12 @@
     <%= f.text_field :sku, :size => 16 %>
   <% end %>
 
-  <% if Spree::Config[:track_inventory_levels] %>
-    <%= f.field_container :on_hand do %>
-      <%= f.label :on_hand, t(:on_hand) %><br />
-      <%= f.number_field :on_hand, :min => 0 %>
-    <% end %>
-  <% end %>
+  <%# if Spree::Config[:track_inventory_levels] %>
+    <%#= f.field_container :on_hand do %>
+      <%#= f.label :on_hand, t(:on_hand) %><br />
+      <%#= f.number_field :on_hand, :min => 0 %>
+    <%# end %>
+  <%# end %>
 
   <ul id="shipping_specs">
     <li id="shipping_specs_weight_field">
