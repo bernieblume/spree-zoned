@@ -1,10 +1,11 @@
 require "spree/zoned/search/base"
 
+if ActiveRecord::Base.connection.tables.include? "spree_countries"
 #
 # ZONED_COMMON_COUNTRIES is the list of countries that will be separately listed
 # in the beginning of the country select box for easy selection.
 # Edit the list to your liking.
-#    
+#
 ZONED_COMMON_COUNTRIES =
 [
   214, # United States
@@ -42,3 +43,4 @@ Rails.configuration.availableLanguages = Hash[ZONED_COMMON_LOCALES.map { |c, lgs
 Spree::Config.searcher_class = Spree::Zoned::Search::Base
 Spree::Config.admin_products_per_page = 64
 #Spree::PrintInvoice::Config[:print_invoice_logo_path] = "admin/bg/hau-to-logo-invoice.jpg"
+end
