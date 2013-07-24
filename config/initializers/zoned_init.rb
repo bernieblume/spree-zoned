@@ -50,13 +50,13 @@ if ActiveRecord::Base.connection.tables.include? "spree_countries"
   # -29=>[:nl, :de, :en],
   # -211=>[:de, :en, :nl]}
   h = {}
-  COMMON_LOCALES.each do |k, v|
-    h[-COMMON_COUNTRIES_MAPPING[k]] = v
+  COMMON_LOCALES.each do |country, locale|
+    h[-COMMON_COUNTRIES_MAPPING[country]] = locale if COMMON_COUNTRIES_MAPPING[country]
   end
   ZONED_COMMON_LOCALES = h
 
   Rails.configuration.commonCountriesForSelect = COMMON_COUNTRIES.map do |country|
-    [country, -COMMON_COUNTRIES_MAPPING[country]]
+    [country, -COMMON_COUNTRIES_MAPPING[country]] if COMMON_COUNTRIES_MAPPING[country]
   end
 
   Rails.configuration.availableLanguages = Hash[ZONED_COMMON_LOCALES.map { |c, lgs| [c, lgs.map { |l| [((l==:en ? "English" : (l==:de ? "Deutsch" : "Nederlands"))) ,l]}]}]
