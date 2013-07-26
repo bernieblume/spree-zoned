@@ -1,6 +1,6 @@
 <div id="zoned-countryselect" class="columns omega ten">
   <%  c = ((session[:zoned] && session[:zoned][:current_country]) || -214) %>
-  <%= label_tag t('country') + ": "  %>
+  <%= label_tag Spree.t('country') + ": "  %>
   <%= select_tag 'id',
     options_for_select( # common countries have negative id
       Rails.application.config.commonCountriesForSelect +
@@ -11,12 +11,12 @@
     :data => {
 	    :remote => true,
 	    :url => url_for(
-	      :controller => "zoned", 
+	      :controller => "zoned",
 		    :action => "setcountry",
 		  ),
 		}
   %>
-  <%= label_tag t('language') + ": "  %>
+  <%= label_tag Spree.t('language') + ": "  %>
   <%= select_tag 'lgid',
     options_for_select( # common countries have negative id
       hlpAvailLangs(c.to_i),
@@ -25,7 +25,7 @@
     :data => {
       :remote => true,
       :url => url_for(
-        :controller => "zoned", 
+        :controller => "zoned",
         :action => "setlanguage",
       ),
     }
