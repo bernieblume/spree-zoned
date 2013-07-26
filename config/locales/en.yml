@@ -2,27 +2,27 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 ---
 en:
-  nocountrysel: "No country selected"
-  country_price: "Country-specific price"
-  country: "country"
-  language: "Language"
-  iaccept: "I accept the "
-  plsaccept: "Please accept our Terms of Service"
-  terms: "Terms of Service"
-  acceptfield: "Accept_Terms_of_Service"
-  add_to_cart: "Add to cart"
-  out_of_stock: "Out of stock"
   spree:
+    nocountrysel: "No country selected"
+    country_price: "Country-specific price"
+    country: "country"
+    language: "Language"
+    iaccept: "I accept the "
+    plsaccept: "Please accept our Terms of Service"
+    terms: "Terms of Service"
+    acceptfield: "Accept_Terms_of_Service"
+    add_to_cart: "Add to cart"
+    out_of_stock: "Out of stock"
     deletefc: "Delete from country"
     backtocountry: "Reassign to country"
-  termstext: |
-    These are the English Terms of Service__\
-    Lorem\nipsum dolor sit amet,_\
-    consetetur sadipscing elitr, "sed" diam nonumy eirmod tempor invidunt \
-    ut labore et dolore magna aliquyam erat, sed diam voluptua. \
-    At vero eos et accusam et justo duo dolores et ea rebum. \
-    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, \
-    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. \
-    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    termstext: |
+      These are the English Terms of Service__\
+      Lorem\nipsum dolor sit amet,_\
+      consetetur sadipscing elitr, "sed" diam nonumy eirmod tempor invidunt \
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. \
+      At vero eos et accusam et justo duo dolores et ea rebum. \
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, \
+      sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. \
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
