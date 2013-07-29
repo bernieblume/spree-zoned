@@ -9,6 +9,8 @@ if ActiveRecord::Base.connection.tables.include? "spree_countries"
     h
   end
 
+  USA_ID = COMMON_COUNTRIES_MAPPING['United States']
+
   COMMON_LOCALES =
     {
     'United States' => [:en], # United States

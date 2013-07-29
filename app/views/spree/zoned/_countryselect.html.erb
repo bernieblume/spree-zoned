@@ -1,5 +1,5 @@
 <div id="zoned-countryselect" class="columns omega ten">
-  <%  c = ((session[:zoned] && session[:zoned][:current_country]) || -214) %>
+  <%  c = ((session[:zoned] && session[:zoned][:current_country]) || USA_ID) %>
   <%= label_tag Spree.t('country') + ": "  %>
   <%= select_tag 'id',
     options_for_select( # common countries have negative id

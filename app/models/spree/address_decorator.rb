@@ -4,7 +4,7 @@ module Spree
     def state_validate
       # Skip state validation without country (also required)
       # or when disabled by preference
-      return if country.blank? || !Spree::Config[:address_requires_state] || country.id != 214
+      return if country.blank? || !Spree::Config[:address_requires_state] || country.id != USA_ID
 
       # ensure associated state belongs to country
       if state.present?
