@@ -12,3 +12,4 @@ gemspec.old
 nbproject
 *.swp
 spec/dummy
+
