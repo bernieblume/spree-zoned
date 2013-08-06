@@ -4,7 +4,7 @@ module Spree
     attr_accessor :accept
     attr_accessible :accept
 
-    validates :accept, :presence => true, :if => :address?
+    validates :accept, :presence => true, :if => :ship_address_id?
 
   end
 end
