@@ -3,4 +3,5 @@ Deface::Override.new(
   :virtual_path     => "spree/products/_cart_form",
   :replace_contents => "[data-hook='product_price']",
   :partial          => "spree/zoned/product_price",
+  :disabled         => true
 )
